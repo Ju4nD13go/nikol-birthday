@@ -800,13 +800,68 @@
       line-height: 1;
     }
 
-    .countdown-label {
-      font-size: 0.75rem;
+    /* ===== GIFT SECTION ===== */
+    #regalo {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fef3c7 100%);
+      text-align: center;
+      padding: 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .gift-btn {
+      background: var(--rose);
+      color: white;
+      border: none;
+      padding: 1.2rem 2.8rem;
+      font-size: 1.3rem;
       font-weight: 800;
-      letter-spacing: 0.15em;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 10px 30px rgba(244, 63, 94, 0.4);
+      transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      font-family: 'Nunito', sans-serif;
       text-transform: uppercase;
-      opacity: 0.8;
-      margin-top: 0.5rem;
+      letter-spacing: 0.1em;
+      position: relative;
+      z-index: 2;
+    }
+
+    .gift-btn:hover {
+      transform: scale(1.05) translateY(-5px);
+      box-shadow: 0 15px 40px rgba(244, 63, 94, 0.5);
+      background: #e11d48;
+    }
+
+    .gift-btn:active {
+      transform: scale(0.95);
+    }
+
+    .gift-message {
+      margin-top: 3rem;
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      color: var(--text-dark);
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2.5rem;
+      border-radius: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow-card);
+      display: none;
+      animation: fadeInUp 0.8s ease forwards;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 3px solid var(--gold);
+    }
+
+    .gift-message.visible {
+      display: block;
+    }
+
+    .gift-message span {
+      display: block;
+      margin: 0.5rem 0;
     }
 
     /* ===== WISH SECTION ===== */
@@ -1129,7 +1184,7 @@
 
           <!-- FOTO 5 -->
           <div class="carousel-slide">
-            <img src="img/foto5.jpg" alt="Recuerdo 5">
+            <img src="img/foto5.jpeg" alt="Recuerdo 5">
             <div class="carousel-caption">Risas eternas 😂💕</div>
           </div>
 
@@ -1151,6 +1206,54 @@
             <div class="carousel-caption">Siempre juntas ✨</div>
           </div>
 
+          <!-- FOTO 9 -->
+          <div class="carousel-slide">
+            <img src="img/foto9.jpeg" alt="Recuerdo 9">
+            <div class="carousel-caption">Compartiendo momentos 💖</div>
+          </div>
+
+          <!-- FOTO 10 -->
+          <div class="carousel-slide">
+            <img src="img/foto10.jpeg" alt="Recuerdo 10">
+            <div class="carousel-caption">Nuestra felicidad en fotos 📸</div>
+          </div>
+
+          <!-- FOTO 11 -->
+          <div class="carousel-slide">
+            <img src="img/foto11.jpeg" alt="Recuerdo 11">
+            <div class="carousel-caption">Cómplices de vida 👭</div>
+          </div>
+
+          <!-- FOTO 12 -->
+          <div class="carousel-slide">
+            <img src="img/foto12.jpeg" alt="Recuerdo 12">
+            <div class="carousel-caption">Amistad sin límites 🌈</div>
+          </div>
+
+          <!-- FOTO 13 -->
+          <div class="carousel-slide">
+            <img src="img/foto13.jpeg" alt="Recuerdo 13">
+            <div class="carousel-caption">Días llenos de luz ☀️</div>
+          </div>
+
+          <!-- FOTO 14 -->
+          <div class="carousel-slide">
+            <img src="img/foto14.jpeg" alt="Recuerdo 14">
+            <div class="carousel-caption">Haciendo historia juntas 📜</div>
+          </div>
+
+          <!-- FOTO 15 -->
+          <div class="carousel-slide">
+            <img src="img/foto15.jpeg" alt="Recuerdo 15">
+            <div class="carousel-caption">Por más años así 🥂</div>
+          </div>
+
+          <!-- FOTO 16 -->
+          <div class="carousel-slide">
+            <img src="img/foto16.jpeg" alt="Recuerdo 16">
+            <div class="carousel-caption">Te quiero infinito 💛</div>
+          </div>
+
         </div><!-- end track -->
       </div><!-- end container -->
 
@@ -1158,37 +1261,29 @@
       <button class="carousel-btn next" id="btnNext" aria-label="Siguiente">›</button>
 
       <div class="carousel-dots" id="carouselDots"></div>
-      <div class="carousel-counter" id="carouselCounter">1 / 8</div>
+      <div class="carousel-counter" id="carouselCounter">1 / 16</div>
     </div>
   </section>
 
-  <!-- ===== COUNTDOWN / CELEBRACIÓN ===== -->
-  <section id="contador">
+  <!-- ===== REGALO ===== -->
+  <section id="regalo" class="reveal">
     <div class="section-header">
-      <span class="section-tag">🎊 Cuenta Regresiva</span>
-      <h2 class="section-title" id="cdTitle">¡Falta poquito, reina! 👑</h2>
+      <span class="section-tag" style="background: var(--pink-300); color: var(--text-dark);">🎁 Sorpresa</span>
+      <h2 class="section-title">¡Tengo un regalo para ti!</h2>
       <div class="section-line"></div>
-      <p style="margin-top:1rem; opacity:0.85;" id="cdSubtitle">El 20 de marzo es TU día especial 🎂</p>
+      <p style="margin-top:1rem; color:var(--text-mid);">Pulsa el botón de abajo para descubrirlo ✨</p>
     </div>
-    <div class="countdown-grid" id="countdownGrid">
-      <div class="countdown-item" id="cdDaysBox">
-        <span class="countdown-num" id="cdDays">00</span>
-        <div class="countdown-label">Días</div>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-num" id="cdHrs">00</span>
-        <div class="countdown-label">Horas</div>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-num" id="cdMin">00</span>
-        <div class="countdown-label">Minutos</div>
-      </div>
-      <div class="countdown-item">
-        <span class="countdown-num" id="cdSec">00</span>
-        <div class="countdown-label">Segundos</div>
+
+    <div style="margin-top: 3rem; text-align: center;">
+      <button id="btnRegalo" class="gift-btn">¡Reclama tu regalo! 💖</button>
+      <div id="mensajeRegalo" class="gift-message">
+        <span style="font-size: 1.5rem; color: var(--text-mid);">Este es tu regalo de cumpleaños:</span>
+        <span
+          style="font-size: 3.5rem; color: var(--rose); font-weight: 800; text-shadow: 2px 2px 0 var(--gold-light);">100
+          mil pesos...</span>
+        <span style="font-size: 1.8rem; color: var(--pink-600); font-weight: 600;">¡Ya mismo te llegan! 💸✨</span>
       </div>
     </div>
-    <p style="margin-top:2rem; opacity:0.7; font-size:0.9rem;" id="cdFooter">para el día más especial del año 🎈</p>
   </section>
 
   <!-- ===== CARTAS ===== -->
@@ -1429,9 +1524,17 @@
     /* ---- CAROUSEL ---- */
     (function initCarousel() {
       const track = document.getElementById('carouselTrack');
-      const slides = track.querySelectorAll('.carousel-slide');
+      let slides = track.querySelectorAll('.carousel-slide');
       const dotsContainer = document.getElementById('carouselDots');
       const counter = document.getElementById('carouselCounter');
+
+      // Shuffle slides for random order
+      const slidesArray = Array.from(slides);
+      slidesArray.sort(() => Math.random() - 0.5);
+      slidesArray.forEach(slide => track.appendChild(slide));
+      // Re-query slides to get them in the new shuffled order
+      slides = track.querySelectorAll('.carousel-slide');
+
       const total = slides.length;
       let current = 0;
       let autoTimer;
@@ -1495,57 +1598,22 @@
       startAuto();
     })();
 
-    /* ---- COUNTDOWN (Target: March 20) ---- */
-    (function initCountdown() {
-      const targetDate = new Date('March 20, 2026 00:00:00').getTime();
+    /* ---- REGALO LOGIC ---- */
+    (function initRegalo() {
+      const btn = document.getElementById('btnRegalo');
+      const msg = document.getElementById('mensajeRegalo');
 
-      function update() {
-        const now = new Date().getTime();
-        const distance = targetDate - now;
+      if (btn && msg) {
+        btn.addEventListener('click', function () {
+          msg.classList.add('visible');
+          btn.style.display = 'none';
 
-        // Elements
-        const dEl = document.getElementById('cdDays');
-        const hEl = document.getElementById('cdHrs');
-        const mEl = document.getElementById('cdMin');
-        const sEl = document.getElementById('cdSec');
-
-        // UI elements to update on the big day
-        const subtitle = document.getElementById('heroSubtitle');
-        const tagline = document.getElementById('heroTagline');
-        const title = document.getElementById('cdTitle');
-        const cdSub = document.getElementById('cdSubtitle');
-        const cdFooter = document.getElementById('cdFooter');
-        const daysBox = document.getElementById('cdDaysBox');
-
-        if (distance < 0) {
-          // IT IS HER BIRTHDAY!
-          dEl.textContent = "00";
-          hEl.textContent = "00";
-          mEl.textContent = "00";
-          sEl.textContent = "00";
-
-          subtitle.textContent = "✨ ¡HOY ES EL GRAN DÍA! ✨";
-          tagline.textContent = "Hoy el universo entero celebra que existes. Que este día sea tan brillante como tu sonrisa 🌸";
-          title.textContent = "¡FELIZ CUMPLEAÑOS! 🎂";
-          cdSub.textContent = "¡Hoy celebramos tu vida, Toltol! 🎉";
-          cdFooter.textContent = "Disfruta cada segundo de tu día 🎈";
-          if (daysBox) daysBox.style.display = 'none'; // Hide days when it's the day
-          return;
-        }
-
-        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-        dEl.textContent = String(days).padStart(2, '0');
-        hEl.textContent = String(hours).padStart(2, '0');
-        mEl.textContent = String(minutes).padStart(2, '0');
-        sEl.textContent = String(seconds).padStart(2, '0');
+          // Re-trigger global confetti if possible, or just fire a local one
+          // Since the confetti script is an IIFE and doesn't expose spawnBurst, 
+          // we can just wait for the next interval or manually do another if we had access.
+          // For now, the visual reveal is already strong.
+        });
       }
-
-      update();
-      setInterval(update, 1000);
     })();
 
     /* ---- REVEAL ON SCROLL ---- */
